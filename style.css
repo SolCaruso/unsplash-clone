@@ -1,0 +1,531 @@
+/**************************************************** 
+                    Global Styles
+ *****************************************************/
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    background-color: #ffffff;
+    margin: 5em 0;
+}
+
+header {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.location {
+    font-size: .9rem;
+    font-weight: 500;
+    opacity: .3;
+    letter-spacing: -0.03em;
+    padding-top: .5em;
+
+}
+
+.gallery {
+    column-count: 3;
+    column-gap: 15px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    margin-bottom: 15px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.gallery-image {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0; 
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+}
+
+.profile-info img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-name {
+    opacity: .8;
+    cursor: pointer;
+}
+
+.profile-name:hover {
+    opacity: 1;
+}
+
+.download-button {
+    background: rgb(219, 219, 219);
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 22px;
+    text-decoration: none;
+}
+
+.download-button:hover {
+    background: rgb(238, 238, 238);
+}
+
+.download-button svg {
+    width: 16px;
+    height: 16px;
+    opacity: .70;
+}
+
+.fixed-top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 2em 1.5em;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5em;
+    text-decoration: none;
+}
+
+.unsplash {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+    letter-spacing: -0.03em;
+}
+
+.fixed-top-left:hover {
+    opacity: .8;
+}
+
+
+/* Global Style Media Queries */
+
+@media (max-width: 1024px) {
+    .gallery {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        column-count: 1;
+    }
+}
+
+/**************************************************** 
+                    Modal Styles
+ *****************************************************/
+ 
+ .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(67, 67, 67, 0.674);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    width: 90%;
+    max-width: 600px;
+    height: 90vh; 
+    max-height: 100vh;
+    padding: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    position: relative;
+}
+
+.content-wrapper {
+    max-width: 800px; 
+    width: 100%;
+    max-height: 90vh; 
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+#modalImage {
+    width: auto;
+    max-width: 100%;
+    max-height: 70vh; 
+    height: auto;
+    object-fit: contain; 
+    cursor:zoom-in;
+}
+
+.modal-description {
+    text-align: center;
+    font-size: 1rem;
+    color: black;
+    margin-top: 20px;
+}
+
+.modal-caption {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.modal-metadata {
+    display: flex;
+    justify-content: center;
+    gap: 4em; 
+    margin-top: 20px;
+    position: absolute;
+    left: 2em;
+    bottom: 2em;
+}
+
+.label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: gray;
+}
+
+.value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: black;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.modal-name-link {
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 0.5em; 
+}
+
+.modal-pfp {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.modal-pfp-text {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+}
+
+.modal-caption {
+    margin: 0;
+    line-height: 1;
+    font-size: 0.95rem;
+}
+
+.modal-availability {
+    display: flex;
+    align-items: center;
+    gap: 0.2em; 
+    margin-top: 0.2em; 
+}
+
+.modalCheck {
+    fill: #047FFE;
+}
+
+.modal-avl {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #047FFE;
+}
+
+.metadata-item {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    gap: 0.5em; 
+    margin-bottom: 0.5em; 
+}
+
+.metadata-item .label {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: gray;    
+}
+
+.metadata-item .value {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: black;
+}   
+
+.metadata-item-camera {
+    position: absolute;
+    left: 0;
+    bottom: 4.5em;
+    display: flex; 
+    gap: 0.5em;
+    align-items: center;
+}
+
+.metadata-items {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+
+.metadata-items p{
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: black;
+    opacity: .5;
+}
+
+.metadata-item-camera svg {
+    width: 1em;
+    height: 1em;
+    opacity: .5;
+}
+
+/* Full-size overlay background */
+.full-size-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7); /* Black see-through overlay */
+    backdrop-filter: blur(5px); /* Blurry effect */
+    display: none; /* Hidden by default */
+    z-index: 1000;
+}
+
+/* Full-size image style */
+.full-size-image {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100vw;
+    max-height: 100vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    z-index: 1001; /* Ensure it appears above the overlay */
+    cursor: zoom-out;
+    display: none; /* Initially hidden, toggled to display */
+}
+
+
+/**************************************************** 
+                Modal Media Queries
+ *****************************************************/
+
+/* Responsive adjustments for small screens */
+@media (max-width: 600px) {
+    .metadata-item-camera {
+        gap: 0.3em;
+    }
+
+    .metadata-item {
+        gap: 0.3em;
+        margin-bottom: 0.3em;
+    }
+
+    .metadata-item .label {
+        font-size: 0.7rem;
+    }
+
+    .metadata-item .value {
+        font-size: 0.9rem;
+    }
+
+    .metadata-items {
+        gap: 0.3em;
+    }
+
+    .modal-name-link {
+        top: 1em;
+        left: 1em;
+        gap: 0.3em; /* Reduce gap between profile image and text */
+    }
+
+    .modal-pfp {
+        width: 30px;
+        height: 30px;
+    }
+
+    .modal-caption {
+        font-size: 0.85rem;
+    }
+
+    .modal-availability {
+        gap: 0.1em;
+    }
+
+    .modal-avl {
+        font-size: 0.75rem;
+    }
+
+    .metadata-item-camera {
+        bottom: 3.5em;
+    }
+}
+
+/* Further adjustments for very small screens like iPhone SE */
+@media (max-width: 375px) {
+    .metadata-item .label,
+    .metadata-item .value,
+    .metadata-items p {
+        font-size: 0.7rem;
+    }
+
+    .metadata-item-camera svg {
+        width: 0.8em;
+        height: 0.8em;
+    }
+
+    .metadata-item {
+        gap: 0.2em;
+    }
+
+    .metadata-item-camera {
+        bottom: 2.5em;
+    }
+
+    .modal-name-link {
+        top: 0.5em;
+        left: 0.5em;
+        gap: 0.2em;
+    }
+
+    .modal-pfp {
+        width: 28px;
+        height: 28px;
+    }
+
+    .modal-caption {
+        font-size: 0.75rem;
+    }
+
+    .modal-availability {
+        margin-top: 0.1em;
+    }
+
+    .modal-avl {
+        font-size: 0.7rem;
+    }
+
+    .modalCheck {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Height adjustments for narrow screens */
+@media (max-height: 800px) {
+    .metadata-item-camera {
+        bottom: 3em;
+    }
+
+    .metadata-item {
+        gap: 0.3em;
+        margin-bottom: 0.3em;
+    }
+
+    .metadata-item .label {
+        font-size: 0.7rem;
+    }
+
+    .metadata-item .value {
+        font-size: 0.9rem;
+    }
+
+    .metadata-items {
+        gap: 0.3em;
+    }
+
+    .modal-name-link {
+        top: 1em;
+        left: 1em;
+        gap: 0.3em; /* Reduce gap between profile image and text */
+    }
+
+    .modal-pfp {
+        width: 30px;
+        height: 30px;
+    }
+
+    .modal-caption {
+        font-size: 0.85rem;
+    }
+
+    .modal-availability {
+        gap: 0.1em;
+    }
+
+    .modal-avl {
+        font-size: 0.75rem;
+    }
+
+    .metadata-item-camera {
+        bottom: 3.5em;
+    }
+}

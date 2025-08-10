@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <!-- CSS -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <title>Antelope Canyon</title>
+</head>
+
+<body>
+    <header>
+        <a href="https://unsplash.com/" target="_blank" class="fixed-top-left">
+            <svg class="nzoDf" width="24" height="24" viewBox="0 0 32 32" version="1.1" aria-labelledby="unsplash-home"
+                aria-hidden="false">
+                <desc lang="en-US">Unsplash logo</desc>
+                <title id="unsplash-home">Unsplash Home</title>
+                <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path>
+            </svg>
+            <p class="unsplash">Unsplash</p>
+        </a>
+        <h1>Antelope Canyon</h1>
+        <p class="location">Lechee, Arizona</p>
+    </header>
+    <div class="gallery" id="gallery">
+    </div>
+
+    <div class="full-size-overlay"></div>
+    <img id="fullSizeImage" class="full-size-image" src="" alt="Full-size view">
+
+    <!-- Modal Structure -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+
+    
+            <div class="content-wrapper">
+                <!-- Top-left Name and Profile Link -->
+                <a id="modalProfileLink" href="#" target="_blank" class="modal-name-link">
+                    <img src="" alt="profile image" id="modalPfp" class="modal-pfp">
+                    <div class="modal-pfp-text">
+                        <p id="modalCaption" class="modal-caption"></p>
+                        <div class="modal-availability">
+                            <p class="modal-avl">Available for hire</p>
+                            <svg class="modalCheck" width="12" height="12" viewBox="0 0 24 24" version="1.1" aria-hidden="false">
+                                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.9 14.7L6 12.6l1.5-1.5 2.6 2.6 6-6.1 1.5 1.5-7.5 7.6z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+                <img id="modalImage" src="" alt="Modal Image" class="modal-image">
+    
+                <!-- Metadata Section -->
+                <div class="modal-description">
+                    <div id="modalMetadata" class="modal-metadata">
+                        <!-- Camera Info -->
+                        <div class="metadata-item-camera">
+                            <svg class="_pJqy" width="16" height="16" viewBox="0 0 24 24" version="1.1" aria-hidden="false">
+                                <path d="m14.12 4 1.83 2H20v12H4V6h4.05l1.83-2h4.24ZM15 2H9L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2Zm-3 7c1.65 0 3 1.35 3 3s-1.35 3-3 3-3-1.35-3-3 1.35-3 3-3Zm0-2c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5Z"></path>
+                            </svg>
+                            <div class="metadata-items">
+                                <p class="value" id="modalCamera"></p>
+                            </div>
+                        </div>
+    
+                        <!-- Lens Info -->
+                        <div class="metadata-item">
+                            <p class="label">Lens</p>
+                            <p class="value" id="modalLens"></p>
+                        </div>
+    
+                        <!-- Exposure Info -->
+                        <div class="metadata-item">
+                            <p class="label">Exposure</p>
+                            <p class="value" id="modalExposure"></p>
+                        </div>
+    
+                        <!-- ISO Info -->
+                        <div class="metadata-item">
+                            
+                            <p class="label">ISO</p>
+                            <p class="value" id="modalISO"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
